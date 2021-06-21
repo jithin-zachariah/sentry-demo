@@ -5,7 +5,7 @@ const Tracing = require("@sentry/tracing");
 const app = express();
 
 Sentry.init({
-  release: "backend-demo@2.0.0",
+  release: "backend-demo@3.0.0",
   dsn: "https://7ba975416a454b299bdbcbac0b2551f0@o876542.ingest.sentry.io/5826127",
   integrations: [
     // enable HTTP calls tracing
@@ -32,7 +32,7 @@ app.get("/", function rootHandler(req, res) {
 });
 
 app.get("/break", function mainHandler(req, res) {
-  throw new Error("Sentry test error!!!");
+  throw new Error("Sentry test error!!");
 });
 
 // The error handler must be before any other error middleware and after all controllers

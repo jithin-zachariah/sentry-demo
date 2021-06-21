@@ -90,7 +90,7 @@ class App extends Component {
   }
 
   checkout() {
-    throw new Error("test error from frontend");
+    throw new Error("test error on frontend");
     // this.theBreakingFunction();
 
     /*
