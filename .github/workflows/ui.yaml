@@ -18,5 +18,7 @@ jobs:
           SENTRY_ORG: ey-demo-org
           SENTRY_PROJECT: demo-frontend
         with:
-          version: 2.0.0
+          version: 3.0.0
           environment: production
+          set_commits: auto
+          finalize: true
