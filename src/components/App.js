@@ -91,7 +91,7 @@ class App extends Component {
 
   checkout() {
     // throw new Error("test error by jithin");
-    this.breakingFunction();
+    this.theBreakingFunction();
 
     /*
       POST request to /checkout endpoint.

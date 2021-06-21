@@ -35,10 +35,6 @@ app.get("/error", function mainHandler(req, res) {
   throw new Error("Sentry error!!");
 });
 
-app.get("/test", function mainHandler(req, res) {
-  throw new Error("sentry test error!!!");
-});
-
 // The error handler must be before any other error middleware and after all controllers
 app.use(Sentry.Handlers.errorHandler());
 
