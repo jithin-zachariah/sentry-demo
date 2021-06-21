@@ -5,7 +5,7 @@ const Tracing = require("@sentry/tracing");
 const app = express();
 
 Sentry.init({
-  release: "backend-demo@3.0.0",
+  release: "backend-demo@3.1.0",
   dsn: "https://7ba975416a454b299bdbcbac0b2551f0@o876542.ingest.sentry.io/5826127",
   integrations: [
     // enable HTTP calls tracing
@@ -31,7 +31,7 @@ app.get("/", function rootHandler(req, res) {
   res.end("Hello world!!");
 });
 
-app.get("/break", function mainHandler(req, res) {
+app.get("/api/break", function mainHandler(req, res) {
   throw new Error("Sentry test error!!");
 });
 
