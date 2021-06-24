@@ -22,3 +22,4 @@ jobs:
           environment: production
           set_commits: auto
           finalize: true
+          sourcemaps: ./build
