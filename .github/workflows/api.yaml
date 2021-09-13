@@ -15,10 +15,10 @@ jobs:
         uses: getsentry/action-release@v1.1.5
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-          SENTRY_ORG: ey-demo-org
+          SENTRY_ORG: ae-ey
           SENTRY_PROJECT: demo-backend
         with:
-          version: 1.0.0
+          version: 1.0.1
           environment: production
           set_commits: auto
           finalize: true

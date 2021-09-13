@@ -32,7 +32,7 @@ app.get("/", function rootHandler(req, res) {
 });
 
 app.get("/test", function mainHandler(req, res) {
-  throw new Error("Sentry invoked error in api");
+  throw new Error("Sentry invoked error in api!!");
 });
 
 // The error handler must be before any other error middleware and after all controllers
