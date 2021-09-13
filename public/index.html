@@ -25,15 +25,14 @@
 
   <!-- Import SDK -->
   <script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js" crossorigin="anonymous"></script>
-  <script src="https://browser.sentry-cdn.com/6.7.1/bundle.tracing.min.js"
+  <script src="https://browser.sentry-cdn.com/6.12.0/bundle.tracing.min.js"
     integrity="sha384-qOxN14zTU0r3W+9JaAYnMQohi2monmTNAx1i1DhAlCDh8NNx5JYiXfgL/ifXRNcq"
     crossorigin="anonymous"></script>
 
   <!-- Configure SDK -->
   <script>
     Sentry.init({
-      release: "frontend-demo@3.1.0",
-      dsn: "https://e6972012ef054f8e94307e78b7fa8f97@o876542.ingest.sentry.io/5826126",
+      dsn: "https://662397a20c5f4583841990a68e9a1111@o997694.ingest.sentry.io/5956234",
       integrations: [new Sentry.Integrations.BrowserTracing()],
       tracesSampleRate: 1.0,
     });
