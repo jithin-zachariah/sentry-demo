@@ -90,7 +90,7 @@ class App extends Component {
   }
 
   checkout() {
-    throw new Error("Sentry test error on frontend");
+    throw new Error("Sentry invoked error on frontend");
     // this.theBreakingFunction();
 
     /*
