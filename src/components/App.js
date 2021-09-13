@@ -25,19 +25,19 @@ class App extends Component {
       {
         id: "wrench",
         name: "Wrench",
-        price: 5000,
+        price: 500,
         img: wrenchImg,
       },
       {
         id: "nails",
         name: "Nails",
-        price: 290,
+        price: 300,
         img: nailsImg,
       },
       {
         id: "hammer",
         name: "Hammer",
-        price: 5000,
+        price: 400,
         img: hammerImg,
       },
     ];
@@ -90,7 +90,6 @@ class App extends Component {
   }
 
   checkout() {
-    throw new Error("Sentry invoked error on frontend!!");
     // this.theBreakingFunction();
 
     /*
@@ -108,6 +107,8 @@ class App extends Component {
     Sentry.configureScope((scope) => {
       scope.setTag("transaction_id", transactionId);
     });
+
+    throw new Error("Sentry invoked error on the frontend!");
 
     // perform request (set transctionID as header and throw error appropriately)
     request.post(
