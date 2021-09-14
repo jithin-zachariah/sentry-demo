@@ -4,8 +4,11 @@ const Tracing = require("@sentry/tracing");
 
 const app = express();
 
+app.use(express.urlencoded());
+app.use(express.json());
 Sentry.init({
-  dsn: "https://3a23900ddd4840168301f97fd8237610@o997694.ingest.sentry.io/5956266",
+  dsn: "https://2c20d7b937df4e0da1b0a1a8cd28c427@o997694.ingest.sentry.io/5958022",
+  release: "demo-backend@1.0.0",
   integrations: [
     // enable HTTP calls tracing
     new Sentry.Integrations.Http({ tracing: true }),
@@ -30,8 +33,13 @@ app.get("/", function rootHandler(req, res) {
   res.end("Hello world!!");
 });
 
-app.get("/test", function mainHandler(req, res) {
-  throw new Error("Sentry invoked error in api!!");
+app.get("/testget", function mainHandler(req, res) {
+  throw new Error("Sentry invoked error in the GET api!!");
+});
+
+app.post("/testpost", function (req, res) {
+  console.log(req.body);
+  throw new Error("Sentry invoked error in the POST api!!");
 });
 
 // The error handler must be before any other error middleware and after all controllers
@@ -42,7 +50,7 @@ app.use(function onError(err, req, res, next) {
   // The error id is attached to `res.sentry` to be returned
   // and optionally displayed to the user for support.
   res.statusCode = 500;
-  res.end(res.sentry + "\n");
+  res.end("Internal Server Error");
 });
 
 app.listen(5000, () => {
