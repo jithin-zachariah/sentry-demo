@@ -8,7 +8,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 Sentry.init({
   dsn: "https://2c20d7b937df4e0da1b0a1a8cd28c427@o997694.ingest.sentry.io/5958022",
-  release: "demo-backend@1.0.0",
+  release: "demo-backend@1.0.1",
   integrations: [
     // enable HTTP calls tracing
     new Sentry.Integrations.Http({ tracing: true }),
@@ -35,6 +35,10 @@ app.get("/", function rootHandler(req, res) {
 
 app.get("/testget", function mainHandler(req, res) {
   throw new Error("Sentry invoked error in the GET api!!");
+});
+
+app.get("/badcode", function mainHandler(req, res) {
+  throw new Error("Sentry invoked error in a new GET api!!");
 });
 
 app.post("/testpost", function (req, res) {
