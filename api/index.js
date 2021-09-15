@@ -37,7 +37,7 @@ app.get("/testget", function mainHandler(req, res) {
   throw new Error("Sentry invoked error in the GET api!!");
 });
 
-app.get("/badcode", function mainHandler(req, res) {
+app.get("/test", function mainHandler(req, res) {
   throw new Error("Sentry invoked error in a new GET api!!");
 });
 
